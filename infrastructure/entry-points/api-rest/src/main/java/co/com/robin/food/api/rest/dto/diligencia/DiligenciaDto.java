@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Data
@@ -13,9 +15,15 @@ import java.util.List;
 @Builder
 public class DiligenciaDto {
     private long idDiligencia;
-    private long idEcuesta;
-    private String codigoUsuario;
+
+    @NotEmpty
+    private long idEncuesta;
+
+    @NotEmpty
+    private String usuario;
+    @Valid
     private List<RespuestaPreguntaAbiertaDto>  listaRespuestasPreguntasAbirtas;
+    @Valid
     private List<RespuestaPreguntaCerradaDto> listaRespuestaPreguntaCerrada;
 
 }

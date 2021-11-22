@@ -1,16 +1,17 @@
 package co.com.robin.food.jpa.entity.encuesta;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "ENCUESTAS")
 public class EncuestaEntity implements Serializable {
     @Id
@@ -27,17 +28,9 @@ public class EncuestaEntity implements Serializable {
             joinColumns = @JoinColumn(name = "FK_ENCUESTA", nullable = false),
             inverseJoinColumns = @JoinColumn(name="FK_PREGUNTA", nullable = false)
     )
-    @ManyToMany(cascade = CascadeType.ALL)/*,
-            orphanRemoval = true,
-            mappedBy = "encuesta")*/
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<PreguntaEntity> listaPreguntas ;
-    public void addPregunta(PreguntaEntity pregunta){
-        if(this.listaPreguntas == null){
-            this.listaPreguntas = new ArrayList<>();
-        }
 
-        this.listaPreguntas.add(pregunta);
-    }
 
 
 }

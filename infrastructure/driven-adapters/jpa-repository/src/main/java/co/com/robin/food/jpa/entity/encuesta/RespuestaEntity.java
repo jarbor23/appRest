@@ -24,5 +24,4 @@ public class RespuestaEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name="FK_PREGUNTA_CERRADA")
     private PreguntaCerradaEntity preguntaCerrada;
-
 }

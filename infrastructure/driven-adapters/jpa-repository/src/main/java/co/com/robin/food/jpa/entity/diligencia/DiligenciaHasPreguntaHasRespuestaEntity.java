@@ -1,6 +1,5 @@
 package co.com.robin.food.jpa.entity.diligencia;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,13 +12,20 @@ import java.io.Serializable;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "DILIGENCIA")
 @Builder
-public class DiligenciaEntity implements Serializable {
+@Table(name = "Rel_DIL_PRE_RES")
+public class DiligenciaHasPreguntaHasRespuestaEntity implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="ID")
+    private long id;
+
+    @Column(name="fk_id_pregunta")
+    private long idPregunta;
+    @Column(name="fk_id_encuesta")
+    private long idEncueta;
+    @Column(name="fk_id_respuesta")
+    private long idRespuesta;
+    @Column(name="fk_id_diligencia")
     private long idDiligencia;
-    @Column(name="codigo_usuario")
-    private String codigoUsuario;
 }

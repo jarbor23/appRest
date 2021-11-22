@@ -17,12 +17,7 @@ public class EncuestaUseCase {
     public void crearEncuesta(Encuesta encuensta){
         encuestaRepository.crearEncuesta(encuensta);
     }
-    public void crearEncuestaPrueba(){
-        encuestaRepository.crearEncuestaPrueba();
-    }
-    public Object prueba(){
-        return encuestaRepository.getEncuestas1();
-    }
+
 
 
 }

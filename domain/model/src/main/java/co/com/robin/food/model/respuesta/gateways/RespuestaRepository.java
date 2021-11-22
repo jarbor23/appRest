@@ -1,7 +1,7 @@
 package co.com.robin.food.model.respuesta.gateways;
 
-import co.com.robin.food.model.respuesta.Respuesta;
+import co.com.robin.food.model.diligencia.RespuestaPregunta;
 
 public interface RespuestaRepository {
-    long createRespuesta(Respuesta respuesta);
+    RespuestaPregunta createRespuesta(RespuestaPregunta respuesta);
 }

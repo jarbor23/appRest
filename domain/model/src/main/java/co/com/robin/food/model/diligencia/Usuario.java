@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Usuario {
+    private long id;
     private String codigoUsuario;
     private String nombre;
     private String apellido;
